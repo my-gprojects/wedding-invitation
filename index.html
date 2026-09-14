@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faiza &amp; Galang — Wedding Invitation</title>
+  <meta name="description" content="You're invited to the wedding of Faiza Elviya & Galang Dwi Juniar. Sunday, 25 October 2026 at Aroem Resto & Ballroom, Gading Serpong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="linen" aria-hidden="true"></div>
+  <audio id="bgm" loop preload="auto" src="assets/music.mp3"></audio>
+
+  <!-- ========== EDIT: Cover ========== -->
+  <div class="cover" id="cover">
+    <p class="cover-script">We're Getting Married!</p>
+    <div class="photo-booth anim-float">
+      <div class="booth-frame">
+        <img class="booth-strip" src="assets/booth-strip.png" alt="Faiza &amp; Galang" />
+      </div>
+    </div>
+    <p class="open-guest" id="openGuest" hidden></p>
+    <button class="dash-btn" id="openBtn" type="button">Open Invitation</button>
+  </div>
+
+  <main class="invitation" id="invitation" hidden>
+    <button class="music-fab" id="musicToggle" type="button" aria-label="Toggle music" aria-pressed="false">
+      <span class="fab-disc" aria-hidden="true"></span>
+    </button>
+
+    <!-- ========== EDIT: Hero ========== -->
+    <section class="section hero anim-rise" id="home">
+      <p class="eyebrow">you're invited to the wedding of</p>
+      <h1 class="names">
+        Faiza &nbsp;
+        &amp; &nbsp;
+        Galang
+      </h1>
+      <!-- <h1 class="names">
+        <span>Faiza</span>
+        <em>&amp;</em>
+        <span>Galang</span>
+      </h1> -->
+      <div class="guest-block" id="guestBlock" hidden>
+        <div class="guest-qr" id="guestQrWrap">
+          <div id="guestQr"></div>
+          <p class="guest-name" id="guestName"></p>
+          <p class="guest-qr-label">Tunjukkan QR ini saat check-in</p>
+          <p class="guest-qr-key" id="guestQrKey"></p>
+        </div>
+      </div>
+
+      <div class="hero-collage">
+        <div class="envelope-wrap anim-rise" style="--d:.15s">
+          <img class="envelope-art" src="assets/envelope-card.png" alt="" />
+          <article class="save-overlay">
+            <p class="save-kicker">Save the Date</p>
+            <p class="save-date">25.10.26</p>
+            <a class="script-link" href="#details">Discover the Details</a>
+          </article>
+        </div>
+        <div class="hero-side anim-rise" style="--d:.3s">
+          <button class="vinyl-player" id="vinylPlay" type="button" aria-label="Toggle music" aria-pressed="false">
+            <span class="turntable">
+              <img class="turntable-img" src="assets/turntable.png" alt="" />
+              <span class="record" id="record">
+                <img src="assets/vinyl.png" alt="" />
+                <span class="record-text" id="recordText">Click to Play</span>
+              </span>
+            </span>
+          </button>
+          <img class="swans-img" src="assets/swans.png" alt="" />
+          <a class="rsvp-chip" href="#rsvp">RSVP</a>
+        </div>
+      </div>
+      <a class="script-link meet-link" href="#couple">Meet the Groom &amp; Bride</a>
+    </section>
+
+    <!-- ========== EDIT: Countdown ========== -->
+    <section class="section countdown-section anim-rise">
+      <p class="eyebrow">See you soon!</p>
+      <div class="hands">
+        <img src="assets/hands.png" alt="" />
+      </div>
+      <div class="countdown" id="countdown">
+        <div><strong id="d">00</strong><span>Days</span></div>
+        <div><strong id="h">00</strong><span>Hours</span></div>
+        <div><strong id="m">00</strong><span>Minutes</span></div>
+        <div><strong id="s">00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- ========== EDIT: Verse ========== -->
+    <!-- <section class="section verse-section">
+      <div class="verse-card anim-rise">
+        <p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <p class="arabic">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
+        <p class="verse-en">And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy. Surely in this are signs for people who reflect.</p>
+        <a class="verse-ref" href="https://quran.com/ar-rum/21" target="_blank" rel="noopener">Ar-Rum 30:21</a>
+      </div>
+    </section> -->
+
+    <!-- ========== EDIT: Details ========== -->
+    <section class="section details" id="details">
+      <div class="details-frame anim-rise">
+        <img class="orchid-accent" src="assets/orchid.png" alt="" />
+        <p class="details-script">Our Special Day</p>
+        <p class="details-script sub">Sunday, Oct 25th</p>
+        <p class="kicker gold">Celebrated at</p>
+        <h3>Aroem Resto &amp; Ballroom</h3>
+        <p class="venue-loc">Gading Serpong, Tangerang</p>
+        <div class="schedule">
+          <div>
+            <h4>Akad</h4>
+            <p>08:00 am — 10:00 am</p>
+          </div>
+          <div>
+            <h4>Reception <span>(Session I)</span></h4>
+            <p>12:00 PM — 2:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="location-row anim-rise" style="--d:.2s">
+        <a class="map-card" href="https://maps.app.goo.gl/EPSYxiX6Pcj4PbvW8" target="_blank" rel="noopener">
+          <iframe
+            title="Aroem Resto & Ballroom map"
+            src="https://www.google.com/maps?q=place_id:ChIJO6FZAAD9aS4RUSyxuP9NdvI&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <span class="script-link">View Location</span>
+        </a>
+        <img class="wax-img" src="assets/wax-plate.png" alt="" />
+      </div>
+    </section>
+
+    <!-- ========== EDIT: Couple ========== -->
+    <section class="section couple" id="couple">
+      <p class="eyebrow">Meet the Groom &amp; Bride</p>
+      <div class="person person-bride anim-rise">
+        <div class="oval-frame" style="background-image:url('assets/faiza.jpg')"></div>
+        <div class="person-copy">
+          <h3>Faiza</h3>
+          <p class="script">Faiza Elviya</p>
+          <p class="parents">the daughter of<br />mr. Zaifiwar &amp; mrs. Endang</p>
+        </div>
+      </div>
+      <p class="ampersand">&amp;</p>
+      <div class="person person-groom anim-rise" style="--d:.15s">
+        <div class="person-copy">
+          <h3>Galang</h3>
+          <p class="script">Galang Dwi Juniar</p>
+          <p class="parents">the son of<br />mr. Agus &amp; mrs. Haniek</p>
+        </div>
+        <div class="oval-frame" style="background-image:url('assets/galang.jpg')"></div>
+      </div>
+      <figure class="story-photo anim-rise">
+        <img src="assets/couple-sit.jpg" alt="Faiza and Galang" loading="lazy" />
+      </figure>
+      <figure class="story-photo tilt anim-rise" style="--d:.1s">
+        <img src="assets/couple-walk.jpg" alt="Faiza and Galang walking" loading="lazy" />
+      </figure>
+      <article class="story anim-rise">
+        <p>Some love stories begin with a grand moment; ours began simply, as two people sharing the same classroom. What started as a simple meeting slowly grew through countless conversations, shared laughter, and moments we have cherished along the way.</p>
+        <p>Through the years, we have grown together, learning that love is not only about finding a partner, but also finding a best friend, a trusted companion, and someone to walk beside us through every season of life.</p>
+        <p>Written by Allah, nurtured with love, and guided by faith, our journey has brought two hearts together, teaching us that the most beautiful stories are not always the ones that begin with a grand moment, but the ones that grow quietly and last a lifetime.</p>
+      </article>
+    </section>
+
+    <!-- ========== EDIT: RSVP ========== -->
+    <section class="section rsvp" id="rsvp">
+      <p class="eyebrow">Be Our Guest</p>
+      <p class="honor">As we begin this new chapter together, we would be honored by your presence on our wedding day.</p>
+      <img class="stamp-deco anim-rise" src="assets/stamp.png" alt="" />
+      <form class="ticket anim-rise" id="rsvpForm" style="--d:.1s">
+        <div class="barcode" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="ticket-code">25102026</p>
+        <h3 class="script">Confirm Attendance</h3>
+        <label>
+          Full name
+          <input name="name" required placeholder="Your name" autocomplete="name" />
+        </label>
+        <label>
+          Number of guests
+          <input name="guests" type="number" min="1" max="8" value="1" required />
+        </label>
+        <label>
+          Will you attend?
+          <select name="attend" required>
+            <option value="yes">Joyfully attending</option>
+            <option value="no">Unable to attend</option>
+          </select>
+        </label>
+        <label>
+          Note
+          <textarea name="note" rows="2" placeholder="Optional message"></textarea>
+        </label>
+        <button class="dash-btn solid" type="submit">Send RSVP</button>
+        <p class="form-status" id="rsvpStatus" hidden></p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <img class="calla-foot" src="assets/calla.png" alt="" />
+      <p>Faiza &amp; Galang</p>
+      <p>Sunday, 25 October 2026 · Aroem Resto &amp; Ballroom</p>
+      <a href="#home">Return Home</a>
+      <p class="music-credit">Music: Dan + Shay — Speechless (Acoustic)</p>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="guest-utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
