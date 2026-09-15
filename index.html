@@ -14,6 +14,10 @@
   <div class="linen" aria-hidden="true"></div>
   <audio id="bgm" loop preload="auto" src="assets/music.mp3"></audio>
 
+  <div class="creature creature-dragon" id="dragon" aria-hidden="true">
+    <div class="creature-sprite creature-sprite-dragon"></div>
+  </div>
+
   <!-- ========== EDIT: Cover ========== -->
   <div class="cover" id="cover">
     <p class="cover-script">We're Getting Married!</p>
@@ -27,6 +31,9 @@
   </div>
 
   <main class="invitation" id="invitation" hidden>
+    <button class="dragon-fab" id="dragonToggle" type="button" aria-label="Summon dragon" aria-pressed="false" title="Summon dragon">
+      <span class="dragon-fab-icon" aria-hidden="true"></span>
+    </button>
     <button class="music-fab" id="musicToggle" type="button" aria-label="Toggle music" aria-pressed="false">
       <span class="fab-disc" aria-hidden="true"></span>
     </button>

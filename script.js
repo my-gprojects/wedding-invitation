@@ -8,6 +8,7 @@ const record = document.getElementById("record");
 const recordText = document.getElementById("recordText");
 const musicToggle = document.getElementById("musicToggle");
 const vinylPlay = document.getElementById("vinylPlay");
+const dragonToggle = document.getElementById("dragonToggle");
 
 function setMusicUi(playing) {
   record?.classList.toggle("play", playing);
@@ -95,9 +96,38 @@ function tick() {
   document.getElementById("s").textContent = pad(sec % 60);
 }
 
+const MUSIC_DEFAULT = "assets/music.mp3";
+const MUSIC_DRAGON = "assets/backsound.mp3";
+
+async function switchTrack(src, { resume = true } = {}) {
+  if (!bgm) return;
+  const wasPlaying = !bgm.paused;
+  const next = new URL(src, window.location.href).href;
+  if (bgm.src === next) {
+    if (resume && wasPlaying) await tryPlay();
+    return;
+  }
+  bgm.pause();
+  bgm.src = src;
+  bgm.load();
+  if (resume && wasPlaying) await tryPlay();
+  else setMusicUi(false);
+}
+
+async function toggleDragon() {
+  const on = document.body.classList.toggle("dragon-on");
+  dragonToggle?.classList.toggle("is-active", on);
+  dragonToggle?.setAttribute("aria-pressed", on ? "true" : "false");
+  await switchTrack(on ? MUSIC_DRAGON : MUSIC_DEFAULT, { resume: true });
+  if (on && bgm?.paused) await tryPlay();
+}
+
 openBtn?.addEventListener("click", openInvitation);
 musicToggle?.addEventListener("click", toggleMusic);
 vinylPlay?.addEventListener("click", toggleMusic);
+dragonToggle?.addEventListener("click", () => {
+  void toggleDragon();
+});
 bgm?.addEventListener("play", () => setMusicUi(true));
 bgm?.addEventListener("pause", () => setMusicUi(false));
 
